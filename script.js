@@ -264,4 +264,19 @@
     }
 
     document.addEventListener('DOMContentLoaded', init);
-})();
+}());
+
+// Cursor follower
+const follower = document.createElement("div");
+follower.id = "cursor-follower";
+document.body.appendChild(follower);
+
+const reduceMotion =
+  typeof window.matchMedia === "function" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reduceMotion) {
+  window.addEventListener("pointermove", (event) => {
+    follower.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+  });
+}
