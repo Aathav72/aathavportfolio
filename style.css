@@ -271,8 +271,8 @@ body.dark .nav-status { color: #b8ffe2; border-color: rgba(33,209,150,0.4); back
 .about-details { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.4rem; }
 .detail-item { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: center; }
 .detail-item i { color: var(--primary); font-size: 1.3rem; }
-.detail-item h4 { font-size: 1.08rem; }
-.detail-item p { font-size: 1rem; }
+.detail-item h4 { font-size: 1.08rem; margin: 0 0 0.25rem; }
+.detail-item p { font-size: 1rem; margin: 0; }
 
 /* Skills */
 .skills { position: relative; background: transparent; }
