@@ -3,6 +3,7 @@
     const body = document.body;
     const navMenu = document.getElementById('navMenu');
     const hamburger = document.getElementById('hamburger');
+    const navLinks = navMenu ? navMenu.querySelectorAll('.nav-link') : [];
     const themeToggle = document.getElementById('themeToggle');
     const scrollProgress = document.getElementById('scrollProgress');
     const typingTarget = document.querySelector('.typing');
@@ -30,10 +31,32 @@
             hamburger.setAttribute('aria-expanded', String(isOpen));
         });
 
-        navMenu.querySelectorAll('.nav-link').forEach((link) => {
+        navLinks.forEach((link) => {
             link.addEventListener('click', () => {
                 closeNavMenu();
             });
+        });
+    }
+
+    function updateActiveNav() {
+        if (!navLinks.length) return;
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 140; // offset for fixed navbar
+        let currentId = '';
+
+        sections.forEach((section) => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            if (scrollPos >= top && scrollPos < bottom) {
+                currentId = section.id;
+            }
+        });
+
+        navLinks.forEach((link) => {
+            const href = link.getAttribute('href') || '';
+            const isActive = href === `#${currentId}` && currentId !== '';
+            link.setAttribute('aria-current', isActive ? 'page' : 'false');
+            link.classList.toggle('active', isActive);
         });
     }
 
@@ -258,8 +281,20 @@
         setupModals();
         setupContactForm();
         updateScrollProgress();
+        updateActiveNav();
 
-        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        let ticking = false;
+        const handleScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                updateScrollProgress();
+                updateActiveNav();
+                ticking = false;
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', updateScrollProgress);
     }
 
