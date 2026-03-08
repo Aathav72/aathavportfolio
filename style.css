@@ -1,43 +1,46 @@
 :root {
-    --primary: #7c3aed;
-    --primary-strong: #6d28d9;
-    --accent: #8b5cf6;
-    --bg: #faf5ff;
-    --bg-2: #ede9fe;
+    --primary: #1e4080;
+    --primary-strong: #163368;
+    --accent: #2d5fa8;
+    --bg: #f7f6f3;
+    --bg-2: #edebe5;
     --card: #ffffff;
-    --text: #1e1b4b;
-    --muted: #6b7280;
-    --border: #ddd6fe;
+    --text: #1a1a24;
+    --muted: #606672;
+    --border: #dbd8d0;
     --radius: 14px;
-    --shadow: 0 18px 50px rgba(124, 58, 237, 0.08);
-    --shadow-strong: 0 24px 70px rgba(124, 58, 237, 0.14);
+    --shadow: 0 18px 50px rgba(30, 64, 128, 0.07);
+    --shadow-strong: 0 24px 70px rgba(30, 64, 128, 0.13);
     --transition: 0.25s ease;
     --content: 1200px;
     --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-serif: "Playfair Display", Georgia, serif;
-    --bg-spot-1: rgba(124, 58, 237, 0.07);
-    --bg-spot-2: rgba(139, 92, 246, 0.04);
-    --bg-spot-3: rgba(167, 139, 250, 0.06);
-    --bg-glow: rgba(124, 58, 237, 0.04);
-    --bg-grid: rgba(124, 58, 237, 0.04);
-    --bg-glimmer: rgba(167, 139, 250, 0.18);
+    --bg-spot-1: rgba(30, 64, 128, 0.05);
+    --bg-spot-2: rgba(45, 95, 168, 0.03);
+    --bg-spot-3: rgba(100, 140, 200, 0.04);
+    --bg-glow: rgba(30, 64, 128, 0.03);
+    --bg-grid: rgba(30, 64, 128, 0.035);
+    --bg-glimmer: rgba(190, 210, 240, 0.20);
 }
 
 body.dark {
-    --bg: #0d0814;
-    --bg-2: #160d24;
-    --card: #1e1134;
-    --text: #f5f3ff;
-    --muted: #c4b5fd;
-    --border: #3b1d7e;
+    --primary: #5b8fcf;
+    --primary-strong: #4a7aba;
+    --accent: #6ea3dc;
+    --bg: #0c0c10;
+    --bg-2: #141418;
+    --card: #1c1c24;
+    --text: #e4e2dd;
+    --muted: #8a9099;
+    --border: #2c2c38;
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
     --shadow-strong: 0 26px 80px rgba(0, 0, 0, 0.55);
-    --bg-spot-1: rgba(124, 58, 237, 0.18);
-    --bg-spot-2: rgba(139, 92, 246, 0.12);
-    --bg-spot-3: rgba(167, 139, 250, 0.14);
-    --bg-glow: rgba(139, 92, 246, 0.08);
-    --bg-grid: rgba(167, 139, 250, 0.05);
-    --bg-glimmer: rgba(167, 139, 250, 0.08);
+    --bg-spot-1: rgba(91, 143, 207, 0.09);
+    --bg-spot-2: rgba(110, 163, 220, 0.06);
+    --bg-spot-3: rgba(150, 190, 235, 0.07);
+    --bg-glow: rgba(91, 143, 207, 0.04);
+    --bg-grid: rgba(91, 143, 207, 0.04);
+    --bg-glimmer: rgba(91, 143, 207, 0.07);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
