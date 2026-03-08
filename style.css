@@ -15,12 +15,12 @@
     --content: 1200px;
     --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-serif: "Playfair Display", Georgia, serif;
-    --bg-spot-1: rgba(37, 99, 235, 0.05);
-    --bg-spot-2: rgba(16, 185, 129, 0.04);
-    --bg-spot-3: rgba(37, 99, 235, 0.03);
-    --bg-glow: rgba(37, 99, 235, 0.03);
-    --bg-grid: rgba(37, 99, 235, 0.03);
-    --bg-glimmer: rgba(186, 213, 255, 0.22);
+    --bg-spot-1: rgba(37, 99, 235, 0.12);
+    --bg-spot-2: rgba(16, 185, 129, 0.10);
+    --bg-spot-3: rgba(37, 99, 235, 0.08);
+    --bg-glow: rgba(37, 99, 235, 0.07);
+    --bg-grid: rgba(37, 99, 235, 0.07);
+    --bg-glimmer: rgba(186, 213, 255, 0.35);
 }
 
 body.dark {
@@ -35,12 +35,12 @@ body.dark {
     --border: #334155;
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
     --shadow-strong: 0 26px 80px rgba(0, 0, 0, 0.55);
-    --bg-spot-1: rgba(96, 165, 250, 0.08);
-    --bg-spot-2: rgba(52, 211, 153, 0.05);
-    --bg-spot-3: rgba(96, 165, 250, 0.06);
-    --bg-glow: rgba(96, 165, 250, 0.04);
-    --bg-grid: rgba(96, 165, 250, 0.04);
-    --bg-glimmer: rgba(96, 165, 250, 0.07);
+    --bg-spot-1: rgba(96, 165, 250, 0.20);
+    --bg-spot-2: rgba(52, 211, 153, 0.14);
+    --bg-spot-3: rgba(96, 165, 250, 0.16);
+    --bg-glow: rgba(96, 165, 250, 0.10);
+    --bg-grid: rgba(96, 165, 250, 0.10);
+    --bg-glimmer: rgba(96, 165, 250, 0.16);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
