@@ -88,20 +88,9 @@ body::after {
     inset: 0;
     background-image:
         linear-gradient(var(--bg-grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px),
-        radial-gradient(circle at 22% 22%, var(--bg-glimmer), transparent 28%),
-        radial-gradient(circle at 78% 10%, var(--bg-glimmer), transparent 30%),
-        radial-gradient(circle at 18% 74%, color-mix(in srgb, var(--bg-glimmer) 70%, transparent) 0%, transparent 32%),
-        radial-gradient(circle at 82% 78%, color-mix(in srgb, var(--bg-glimmer) 70%, transparent) 0%, transparent 30%),
-        repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px);
-    background-size:
-        200px 200px,
-        200px 200px,
-        100% 100%,
-        100% 100%,
-        100% 100%,
-        100% 100%,
-        240px 240px;
+        linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 200px 200px, 200px 200px;
+    background-position: 0 0, 0 0;
     mix-blend-mode: soft-light;
     opacity: 0.65;
     pointer-events: none;
@@ -377,10 +366,20 @@ body.dark .nav-status { color: #b8ffe2; border-color: rgba(33,209,150,0.4); back
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--card);
-    transform: translateY(28px);
     position: relative;
     z-index: 1;
 }
+.about-photo-meta { text-align: center; padding-top: 1.2rem; }
+.about-photo-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 0 0 0.15rem; }
+.about-photo-role { font-size: 0.82rem; color: var(--muted); font-weight: 600; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; }
+.about-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; }
+.about-chips span { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: color-mix(in srgb, var(--primary) 10%, transparent); border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--border)); color: var(--text); font-size: 0.8rem; font-weight: 600; }
+.about-chips span i { color: var(--primary); font-size: 0.75rem; }
+
+.about-currently { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.9rem; border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border)); color: var(--accent); font-weight: 700; font-size: 0.85rem; margin-bottom: 1.2rem; }
+.about-currently i { font-size: 0.65rem; animation: pulse-dot 1.8s ease-in-out infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
 .about-text { padding: 0.2rem 0; }
 .about-text p { font-size: 1.08rem; line-height: 1.75; margin-bottom: 1.4rem; }
 .about-details { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.4rem; }
@@ -576,12 +575,12 @@ body.dark .nav-status { color: #b8ffe2; border-color: rgba(33,209,150,0.4); back
 
 /* Contact */
 .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.contact-info { display: grid; gap: 0.9rem; }
+.contact-info { display: grid; gap: 0.9rem; min-width: 0; }
 .contact-item { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); align-items: center; transition: var(--transition); }
 .contact-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); }
 .contact-item i { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary-strong); }
 
-.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow); display: grid; gap: 0.9rem; }
+.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow); display: grid; gap: 0.9rem; min-width: 0; }
 .form-group { display: grid; gap: 0.35rem; }
 input, textarea { width: 100%; padding: 0.75rem 0.9rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-2); color: var(--text); transition: var(--transition); }
 input:focus, textarea:focus { outline: 2px solid color-mix(in srgb, var(--primary) 35%, transparent); border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); background: var(--card); }
@@ -616,6 +615,13 @@ input:focus, textarea:focus { outline: 2px solid color-mix(in srgb, var(--primar
 @media (max-width: 1024px) {
     .about-content { grid-template-columns: 1fr; }
     .hero-content { grid-template-columns: 1fr 0.9fr; gap: 1.6rem; }
+}
+
+@media (max-width: 960px) {
+    .hero-content { grid-template-columns: 1fr; gap: 1.6rem; }
+    .hero-text { padding-left: 0; min-width: 0; width: 100%; }
+    .hero-accent { min-width: 0; width: 100%; }
+    .contact-content { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 840px) {
