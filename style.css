@@ -47,7 +47,7 @@ body.dark {
 
 img { max-width: 100%; height: auto; display: block; }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; width: 100%; max-width: 100%; overflow-x: hidden; }
 
 body {
     font-family: var(--font-sans);
@@ -60,11 +60,14 @@ body {
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
+    padding: 0;
     padding-top: 78px;
     position: relative;
     isolation: isolate;
     transition: background-color 0.35s ease, background-image 0.35s ease, color 0.35s ease;
     margin: 0;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
