@@ -185,9 +185,7 @@ a:hover { color: var(--primary-strong); }
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     position: fixed;
-    top: 72px;
-    left: 16px;
-    right: auto;
+    inset: 72px auto auto 16px;
     width: min(260px, calc(100% - 32px));
     z-index: 2000;
 }
