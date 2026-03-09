@@ -184,12 +184,12 @@ a:hover { color: var(--primary-strong); }
     background: var(--card);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    right: auto;
-    width: min(260px, calc(100% - 24px));
-    z-index: 5;
+    position: fixed;
+    top: 72px;
+    right: 16px;
+    left: auto;
+    width: min(260px, calc(100% - 32px));
+    z-index: 2000;
 }
 .nav-menu.active { display: flex; animation: fadeInDown 0.25s ease; }
 .nav-menu li { width: 100%; }
