@@ -48,6 +48,7 @@ body.dark {
 img { max-width: 100%; height: auto; display: block; }
 
 html { scroll-behavior: smooth; width: 100%; max-width: 100%; overflow-x: hidden; }
+html, body { width: 100%; overflow-x: hidden; }
 
 body {
     font-family: var(--font-sans);
@@ -69,6 +70,7 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    min-width: 320px;
 }
 
 body::before {
@@ -105,7 +107,6 @@ body::after {
 section { padding: 5rem 1.4rem; position: relative; overflow: hidden; background: none; backdrop-filter: none; }
 section[id] { scroll-margin-top: 96px; }
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
 h1, h2, h3, h4 { font-family: var(--font-serif); color: var(--text); }
 h1 { font-size: clamp(2.4rem, 3vw, 3.5rem); letter-spacing: -0.01em; }
@@ -155,6 +156,7 @@ a:hover { color: var(--primary-strong); }
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -168,6 +170,7 @@ a:hover { color: var(--primary-strong); }
     position: relative;
 }
 
+.container { width: 90%; max-width: 1200px; margin: 0 auto; overflow-x: hidden; }
 .nav-brand { display: inline-flex; align-items: center; gap: 0.55rem; margin-right: auto; }
 .nav-brand::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: none; }
 .nav-brand-tagline { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
