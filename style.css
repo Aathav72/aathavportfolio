@@ -156,7 +156,6 @@ a:hover { color: var(--primary-strong); }
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
-    overflow-x: hidden;
 }
 
 .nav-container {
@@ -170,7 +169,7 @@ a:hover { color: var(--primary-strong); }
     position: relative;
 }
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; overflow-x: hidden; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 .nav-brand { display: inline-flex; align-items: center; gap: 0.55rem; margin-right: auto; }
 .nav-brand::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: none; }
 .nav-brand-tagline { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
