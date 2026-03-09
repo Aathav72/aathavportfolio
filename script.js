@@ -23,12 +23,27 @@
         }
     }
 
+    function positionNavMenu() {
+        if (!hamburger || !navMenu) return;
+        const rect = hamburger.getBoundingClientRect();
+        const menuWidth = navMenu.offsetWidth || 260;
+        const left = Math.max(12, Math.min(rect.left, window.innerWidth - menuWidth - 12));
+
+        navMenu.style.left = `${left}px`;
+        navMenu.style.top = `${rect.bottom + 10}px`;
+        navMenu.style.right = 'auto';
+    }
+
     function setupNav() {
         if (!hamburger || !navMenu) return;
         hamburger.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('active');
             hamburger.classList.toggle('active', isOpen);
             hamburger.setAttribute('aria-expanded', String(isOpen));
+            if (isOpen) {
+                // Keep dropdown attached to hamburger regardless of viewport/zoom.
+                positionNavMenu();
+            }
         });
 
         navLinks.forEach((link) => {
@@ -295,7 +310,12 @@
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('resize', updateScrollProgress);
+        window.addEventListener('resize', () => {
+            updateScrollProgress();
+            if (navMenu && navMenu.classList.contains('active')) {
+                positionNavMenu();
+            }
+        });
     }
 
     document.addEventListener('DOMContentLoaded', init);
